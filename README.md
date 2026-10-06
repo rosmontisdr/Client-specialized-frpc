@@ -1,1 +1,2 @@
-# Client-specialized-frpc
+仅仅是将frpc运行时的命令行弹窗改为可关闭
+你可以在系统托盘重新打开它
