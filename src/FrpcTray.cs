@@ -709,8 +709,12 @@ namespace FrpcTray
             if (IsDisposed) return;
             if (_box.TextLength > 300000)
             {
+                // 只读控件拒绝 SelectedText 并发出系统提示音，临时放开
+                bool ro = _box.ReadOnly;
+                _box.ReadOnly = false;
                 _box.Select(0, 100000);
                 _box.SelectedText = "";
+                _box.ReadOnly = ro;
             }
             _box.SelectionStart = _box.TextLength;
             _box.SelectionLength = 0;
